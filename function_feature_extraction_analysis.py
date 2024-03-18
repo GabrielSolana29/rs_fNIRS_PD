@@ -46,7 +46,6 @@ else:
     
 import functions_feature_selection as ffs
 import functions_paths as fpt
-import load_save_data as fld
 #%% Needed functions
 def eliminate_correlated_features(X,threshold_):
     # Remove correlated columns

@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 
 #%% Functions 
 def get_patient(df,number,control:bool=False):

@@ -6,7 +6,6 @@ import os
 #from sklearn.metrics import auc, accuracy_score, confusion_matrix, mean_squared_error
 from sklearn.model_selection import cross_val_score,KFold, RandomizedSearchCV, train_test_split
 from sklearn.metrics import accuracy_score
-import functions_feature_extraction_c as ffe_c
 import functions_paths as fpt
 
 def optimize_params(xtrain,ytrain,no_jobs:int = -1, no_iterations_opt:int=250):
