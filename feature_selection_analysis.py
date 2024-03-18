@@ -3,7 +3,6 @@ import pandas as pd
 import numpy as np
 import time
 from sklearn import preprocessing
-import scipy.io
 import matplotlib.pyplot as plt
 from sklearn.pipeline import Pipeline
 from sklearn.feature_selection import VarianceThreshold
@@ -26,17 +25,9 @@ else:
     directory_functions = str(directory +"\\functions\\")
     sys.path.insert(0, directory_functions) # linux
     
-import functions_ensemble as fe
-#import functions_feature_extraction_c as ffe_c
-import functions_feature_extraction as ffe
-import functions_xgboost_c as fxgb_c
-import functions_signal_processing_analysis_c as fspa_c
-#import functions_causal_feature_selection as fcfs
 import functions_feature_selection as ffs
 import functions_paths as fpt
-import functions_assist as fa
 import load_save_data as fld
-import functions_specific as fsp
 
 #%% Functions
 def eliminate_correlated_features(X,threshold_):

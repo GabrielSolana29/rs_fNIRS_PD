@@ -23,14 +23,7 @@ else:
     directory_functions = str(directory +"\\functions\\")
     sys.path.insert(0, directory_functions) # linux
     
-import functions_feature_extraction_c as ffe_c
 import functions_feature_extraction as ffe
-import functions_xgboost_c as fxgb_c
-import functions_signal_processing_analysis_c as fspa_c
-#import functions_causal_feature_selection as fcfs
-import functions_feature_selection as ffs
-import functions_paths as fpt
-import functions_assist as fa
 import load_save_data as fld
 import functions_specific as fsp
 
