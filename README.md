@@ -37,7 +37,7 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 
 - Guevara, E., Rivas-Ruvalcaba, F. J., Kolosovas-Machuca, E. S., Ramírez-Elías, M. G., Díaz de Leon Zapata, R., Ramirez-GarciaLuna, J. L., & Ildefonso Rodriguez-Leyva. (2023). Functional Near-Infrared Spectroscopy Reveals Delayed Hemodynamic Changes in the Primary Motor Cortex During Fine Motor Tasks and Decreased Interhemispheric Connectivity in Parkinson's Disease Patients (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7966830
 
-**Pre-processing**
+**Main script**
 
 ***Load the dataset***
 
