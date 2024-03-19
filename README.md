@@ -42,13 +42,14 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 
 **Pre-processing**
 
---Not recommended--
-
-To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finllay run the "create_dataset.py script".
-
 --Recomended--
 Download the CSV "complete_dataset.csv" as described in the previous section and store it in the CSV folder.
 
+--Not recommended--
+To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finllay run the "create_dataset.py script".
+
+**Parameters
+The number of folds for the cross-validation of the classifiers and training algorithms can be modified by changing the variable *cv* in the main.py file.
 
 **Feature extraction**
 

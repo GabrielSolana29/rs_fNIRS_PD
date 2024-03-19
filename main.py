@@ -1,3 +1,4 @@
+#%% Import libraries and scripts
 import pandas as pd 
 import numpy as np
 import time
@@ -19,16 +20,14 @@ from sklearn.inspection import permutation_importance
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 
+# Import scripts
 linux = False
 import os
-#%% Import scripts
-
 directory = os.getcwd()
 if directory[0] == "/":
     linux = True
 else:
     linux = False
-#%% Import scripts
 import sys
 if linux == True:  
     directory_functions = str(directory +"/functions/")
@@ -284,6 +283,10 @@ def generate_csv_dataset(directory,linux:bool=False):
 
 #%% Main program
 if __name__ == "__main__":
+        
+    # Set the Cross Validation folds
+    cv = 10
+    
     # Generate the necesary datasets for control and PD patients from the file
     # "complete_dataset.csv" stored in the CSV folder
     
@@ -328,8 +331,6 @@ if __name__ == "__main__":
     x = scale_0_1(x)
     x2 = scale_0_1(x2)
 
-    # Set the Cross Validation folds
-    cv = 10
     # First lets check for correlation between the features 
     name_csv = "complete_dataset_complete"    
     xtrain,ytrain,feature_list,removed_features_ = load_preprocess_dataset(name_csv,variance_t=True,linux = linux)
