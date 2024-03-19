@@ -1,12 +1,15 @@
 
-### Integrating fNIRS and Machine Learning: Shedding Light on Parkinson's Disease Detection
+## Integrating fNIRS and Machine Learning: Shedding Light on Parkinson's Disease Detection
 ---
 About the project
 ---
-This project presents a methodology for the analysis of fNIRS with Machine learning for assisting the diagnosis of Parkinson's disease.
+This project presents a methodology for the analysis of fNIRS signals with Machine learning for assisting the diagnosis of Parkinson's disease.
 
-The proposed methodology leverages the 
-
+The following steps are performed with this code:
+1. Dataset creation
+2. Feature extraction 
+3. Feature selection and finding the best subset
+4. Classification
 
 ---
 **Getting Started**
@@ -15,7 +18,10 @@ The proposed methodology leverages the
 - Python 
 - pandas
 - scikit-learn
-
+- numpy 
+- xgboost
+- statsmodels
+- scipy
 
 **Dataset**
 
