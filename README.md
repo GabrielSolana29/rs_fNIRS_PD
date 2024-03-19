@@ -40,9 +40,12 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 - Guevara, E., Rivas-Ruvalcaba, F. J., Kolosovas-Machuca, E. S., Ramírez-Elías, M. G., Díaz de Leon Zapata, R., Ramirez-GarciaLuna, J. L., & Ildefonso Rodriguez-Leyva. (2023). Functional Near-Infrared Spectroscopy Reveals Delayed Hemodynamic Changes in the Primary Motor Cortex During Fine Motor Tasks and Decreased Interhemispheric Connectivity in Parkinson's Disease Patients (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7966830
 
 **Pre-processing**
-To create a a new dataset csv file with the original data, download all the signals from [Guevara, E., Rivas-Ruvalvaba, F.F.,Kolosova-Machuca et al. 2023] and use the create_dataset.py script.
 
-If using the "complete_dataset.csv" file 
+--Not recommended--
+To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finllay run the "create_dataset.py script".
+
+--Recomended--
+If using the "complete_dataset.csv" file provided in this repository, execute the "feature_extraction_dataset.py" script. After running it will output the "complete_dataset.csv"
 
 **Feature extraction**
 
