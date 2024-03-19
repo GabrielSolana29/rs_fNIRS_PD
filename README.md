@@ -3,7 +3,7 @@
 ---
 About the project
 ---
-This project presents a methodology for the analysis of fNIRS signals with Machine learning for assisting the diagnosis of Parkinson's disease.
+This project presents a methodology for the analysis of fNIRS signals with Machine learning for assisting the diagnosis of Parkinson's disease(PD).
 
 The following steps are performed with this code:
 1. Dataset creation
@@ -30,8 +30,14 @@ The following steps are performed with this code:
 
 
 **Dataset**
-Dataset can be found in 
+
+A CSV file named "Complete_dataset.csv" with the data from PD and controls can be found in this repository for ease of use. https://winliveudlap-my.sharepoint.com/:x:/r/personal/gabriel_solanale_udlap_mx/Documents/fNIRS_article/complete_dataset.csv?d=wc1fdc8c02cdc4fee927907ab2ff002df&csf=1&web=1&e=WeLhM6
+
+
+Original fNIRS resting-state signals from patients with PD and controls can be found in:
+
 - Guevara, E., Rivas-Ruvalcaba, F. J., Kolosovas-Machuca, E. S., Ramírez-Elías, M. G., Díaz de Leon Zapata, R., Ramirez-GarciaLuna, J. L., & Ildefonso Rodriguez-Leyva. (2023). Functional Near-Infrared Spectroscopy Reveals Delayed Hemodynamic Changes in the Primary Motor Cortex During Fine Motor Tasks and Decreased Interhemispheric Connectivity in Parkinson's Disease Patients (1.0.0) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7966830
+
 
 **Pre-processing**
 
