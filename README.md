@@ -31,7 +31,8 @@ The following steps are performed with this code:
 
 **Dataset**
 
-A CSV file named "Complete_dataset.csv" with the data from PD and controls can be found in this repository for ease of use. https://winliveudlap-my.harepoint.com/:x:/r/personal/gabriel_solanale_udlap_mx/Documents/fNIRS_article/complete_dataset.csv?d=wc1fdc8c02cdc4fee927907ab2ff002df&csf=1&web=1&e=WeLhM6
+A CSV file named "Complete_dataset.csv" with the data from PD and controls can be found in this repository for ease of use.
+- https://winliveudlap-my.sharepoint.com/:x:/r/personal/gabriel_solanale_udlap_mx/Documents/fNIRS_article/complete_dataset.csv?d=wc1fdc8c02cdc4fee927907ab2ff002df&csf=1&web=1&e=jmz5bJ
 
 
 Original fNIRS resting-state signals from patients with PD and controls can be found in:
