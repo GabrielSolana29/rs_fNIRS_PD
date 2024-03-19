@@ -25,8 +25,29 @@ else:
     
 import functions_feature_extraction as ffe
 import load_save_data as fld
-import functions_specific as fsp
 
+#%% function to get information from patient
+def get_patient(df,number,control:bool=False):    
+    if control == True:
+        number = number + .1    
+    for i in range(np.shape(df)[0]):    
+        key_ini = 0
+        if df.id[i] == number:            
+            key_ini = 1             
+        if key_ini == 1:
+            cont = 0
+            while(1):
+                if i+cont < np.shape(df)[0]:
+                    if df.id[i+cont] == number:
+                        cont += 1
+                    else:
+                        break
+                else:
+                    break                
+            df = np.array(df)
+            patient = df[i:i+cont,:]
+            return patient[:,:-2]
+        
 #%% Main program
 path = directory + "\\CSV\\"
 # Load complete dataset
@@ -64,7 +85,7 @@ else:
 
 # Extract features from each patient
 for i in range(1,no_patients+1):
-    patient = fsp.get_patient(dataset,i,control=control) 
+    patient = get_patient(dataset,i,control=control) 
     feature_list = []
     
     # Extract features from each column
@@ -134,7 +155,7 @@ else:
 
 # Extract features from each patient
 for i in range(1,no_patients+1):
-    patient = fsp.get_patient(dataset,i,control=control) 
+    patient = get_patient(dataset,i,control=control) 
     feature_list = []
     
     # Extract features from each column
@@ -209,7 +230,7 @@ features_con_l = []
 
 # Extract features from each patient
 for i in range(1,no_patients+1):
-    patient = fsp.get_patient(dataset,i,control=control) 
+    patient = get_patient(dataset,i,control=control) 
     
     # Extract features from each column
     sampling_rate = 0
@@ -276,7 +297,7 @@ features_freq_l =[]
 features_con_l = []
 # Extract features from each patient
 for i in range(1,no_patients+1):
-    patient = fsp.get_patient(dataset,i,control=control) 
+    patient = get_patient(dataset,i,control=control) 
     
     # Extract features from each column
     sampling_rate = 0
