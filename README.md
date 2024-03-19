@@ -40,6 +40,7 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 **Pre-processing**
 
 ***Load the dataset***
+
 *Recomended*
 Download the CSV "complete_dataset.csv" as described in the previous section and store it in the CSV folder.
 
