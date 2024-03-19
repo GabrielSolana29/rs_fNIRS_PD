@@ -15,13 +15,14 @@ The following steps are performed with this code:
 **Getting Started**
 
 **Requirements**
-- Python 
-- pandas
-- scikit-learn
-- numpy 
-- xgboost
-- statsmodels
-- scipy
+- Python 3.9.18
+- pandas 2.1.2
+- scikit-learn 1.3.2
+- numpy 1.23.5
+- xgboost 2.0.1
+- statsmodels 0.14.0
+- scipy 1.11.3
+- seaborn 0.13.0
 
 **Dataset**
 
