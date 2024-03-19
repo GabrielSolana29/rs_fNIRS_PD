@@ -161,7 +161,31 @@ def get_patient(df,number,control:bool=False):
             df = np.array(df)
             patient = df[i:i+cont,:]
             return patient[:,:-2]
-        
+
+
+def merge_datasets(name_csv1,name_csv2,name_merged_csv):
+    df_1 = fld.load_csv(name_csv1,path,linux=linux)    
+    df_2 = fld.load_csv(name_csv2,path,linux=linux)            
+    # Append the second DataFrame to the first one
+    merged_df = pd.concat([df_1,df_2], ignore_index=True)        
+    merged_df['Class'] = ['1'] * 20 + ['0'] * 20
+    name_csv = str("CSV\\" + name_merged_csv + ".csv")
+    merged_df.to_csv(name_csv,index=False)
+
+
+def merge_all_datasets(df_1,df_2,df_3,name_csv):        
+    df1 = fld.load_csv(df_1,path,linux=linux)    
+    df2 = fld.load_csv(df_2,path,linux=linux)     
+    df3 = fld.load_csv(df_3,path,linux=linux)             
+    df1 = df1.drop('Class',axis=1)
+    df2 = df2.drop('Class',axis=1)
+    df3 = df3.drop('Class',axis=1)                
+    # Concatenate the two subsets horizontally
+    merged_df = pd.concat([df1, df2,df3], axis=1)
+    merged_df['Class'] = ['1'] * 20 + ['0'] * 20
+    name_csv = str("CSV\\" + name_csv + ".csv")
+    merged_df.to_csv(name_csv,index=False)
+
 
 def generate_csv_dataset(directory,linux:bool=False):        
     path = directory + "\\CSV\\"
@@ -218,9 +242,9 @@ def generate_csv_dataset(directory,linux:bool=False):
     features_con_l = pd.DataFrame(features_con_l)
     features_con_l.columns = name_features_connectivity
 
-    features_time_l.to_csv("time_dataset_controls.csv",index=False)
-    features_freq_l.to_csv("frequency_dataset_controls.csv",index=False)
-    features_con_l.to_csv("connectivity_dataset_controls.csv",index=False)
+    features_time_l.to_csv("CSV\\time_dataset_controls.csv",index=False)
+    features_freq_l.to_csv("CSV\\frequency_dataset_controls.csv",index=False)
+    features_con_l.to_csv("CSV\\connectivity_dataset_controls.csv",index=False)
 
     ### PD patients ###
     path = directory + "\\CSV\\"
@@ -277,9 +301,26 @@ def generate_csv_dataset(directory,linux:bool=False):
     features_con_l = pd.DataFrame(features_con_l)
     features_con_l.columns = name_features_connectivity
 
-    features_time_l.to_csv("time_dataset_pd.csv",index=False)
-    features_freq_l.to_csv("frequency_dataset_pd.csv",index=False)
-    features_con_l.to_csv("connectivity_dataset_pd.csv",index=False)
+    features_time_l.to_csv("CSV\\time_dataset_pd.csv",index=False)
+    features_freq_l.to_csv("CSV\\frequency_dataset_pd.csv",index=False)
+    features_con_l.to_csv("CSV\\connectivity_dataset_pd.csv",index=False)
+    
+    # Load datasets to merge controls and PD patients            
+    name_csv1 = 'time_dataset_pd'
+    name_csv2 = 'time_dataset_controls'
+    merge_datasets(name_csv1,name_csv2,"time_dataset_complete")
+    name_csv3 = 'frequency_dataset_pd'
+    name_csv4 = 'frequency_dataset_controls'
+    merge_datasets(name_csv3,name_csv4,"frequency_dataset_complete")
+    name_csv5 = 'connectivity_dataset_pd'
+    name_csv6 = 'connectivity_dataset_controls'
+    merge_datasets(name_csv5,name_csv6,"connectivity_dataset_complete")
+    
+    name1 = "time_dataset_complete"
+    name2= "frequency_dataset_complete"
+    name3 = "connectivity_dataset_complete"
+    merge_all_datasets(name1,name2,name3,"complete_dataset_features")
+    
 
 #%% Main program
 if __name__ == "__main__":
@@ -302,14 +343,6 @@ if __name__ == "__main__":
     df_freq = fld.load_csv(name_csv,path,linux=linux)
     feature_name_freq = df_freq.columns
 
-    name_csv = 'connectivity_dataset_complete'
-    df_conn = fld.load_csv(name_csv,path,linux=linux)
-    feature_name_conn = df_freq.columns
-
-    name_csv = 'pearson_corr_complete'
-    df_pear = fld.load_csv(name_csv,path,linux=linux)
-    feature_name_pear = df_conn.columns
-
     #%% create datasets
     tic = time.perf_counter() 
 
@@ -319,12 +352,6 @@ if __name__ == "__main__":
     df_arr_freq = np.array(df_freq)
     x2 = df_arr_freq[:,:-1]
 
-    df_arr_conn = np.array(df_conn)
-    x3 = df_arr_conn[:,:-1]
-
-    df_arr_pear = np.array(df_pear)
-    x4 = df_arr_pear
-
     y = df_arr_time[:,-1]
 
     # Normalize datasets
@@ -332,7 +359,7 @@ if __name__ == "__main__":
     x2 = scale_0_1(x2)
 
     # First lets check for correlation between the features 
-    name_csv = "complete_dataset_complete"    
+    name_csv = "complete_dataset_features"    
     xtrain,ytrain,feature_list,removed_features_ = load_preprocess_dataset(name_csv,variance_t=True,linux = linux)
     # Perform standarization 
     scaler = preprocessing.StandardScaler().fit(xtrain)
