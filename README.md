@@ -26,14 +26,15 @@ The following steps are performed with this code:
 - statsmodels 0.14.0
 - scipy 1.11.3
 - seaborn 0.13.0
-
+- feature-selection-ga 0.1.3
 
 
 **Dataset**
 
-For ease of use, a CSV file named "complete_dataset.csv" with the data from PD and controls can be found in this repository.
+For ease of use, a CSV file named "complete_dataset.csv" and "pearson_corr_dataset.csv" with the fNIRS data from PD and controls can be found in this repository. After downloading the files, store them in the CSV folder.
 
 - https://app.box.com/s/qt238sdt8udozm29vf8rp3jo6146fk2r
+- https://app.box.com/s/v2cbqtwb9qttn676kc4mtxk8vddn2we6
 
 Original fNIRS resting-state signals from patients with PD and controls can be found in:
 
@@ -42,10 +43,12 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 **Pre-processing**
 
 --Not recommended--
+
 To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finllay run the "create_dataset.py script".
 
 --Recomended--
-If using the "complete_dataset.csv" file provided in this repository, execute the "feature_extraction_dataset.py" script. After running it will output the "complete_dataset.csv"
+Download the CSV "complete_dataset.csv" as described in the previous section and store it in the CSV folder.
+
 
 **Feature extraction**
 
