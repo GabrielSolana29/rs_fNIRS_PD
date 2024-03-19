@@ -15,10 +15,8 @@ The following steps are performed with this code:
 **Getting Started**
 
 
-
-
 **Requirements**
-- Python 3.9.18
+- python 3.9.18
 - pandas 2.1.2
 - scikit-learn 1.3.2
 - numpy 1.23.5
@@ -31,10 +29,9 @@ The following steps are performed with this code:
 
 **Dataset**
 
-For ease of use, a CSV file named "complete_dataset.csv" and "pearson_corr_dataset.csv" with the fNIRS data from PD and controls can be found in this repository. After downloading the files, store them in the CSV folder.
+For ease of use a CSV file named "complete_dataset.csv" with the fNIRS data from PD and controls can be found in this repository. After downloading the file, store it in the CSV folder.
 
 - https://app.box.com/s/qt238sdt8udozm29vf8rp3jo6146fk2r
-- https://app.box.com/s/v2cbqtwb9qttn676kc4mtxk8vddn2we6
 
 Original fNIRS resting-state signals from patients with PD and controls can be found in:
 
@@ -46,15 +43,11 @@ Original fNIRS resting-state signals from patients with PD and controls can be f
 Download the CSV "complete_dataset.csv" as described in the previous section and store it in the CSV folder.
 
 --Not recommended--
-To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finllay run the "create_dataset.py script".
+To create a new dataset CSV file with the original data, download all the signals from (Guevara, E., Rivas-Ruvalvaba, F.F., Kolosova-Machuca, et al. 2023) in .tsv format and add them to the CSV folder. Finally, run the "create_dataset.py script".
 
-**Parameters
-The number of folds for the cross-validation of the classifiers and training algorithms can be modified by changing the variable *cv* in the main.py file.
+*Parameters*
+The number of folds for the cross-validation of the classifiers and training algorithms can be modified by changing the variable *cv* in the main.py in the main program.
 
-**Feature extraction**
+*Execution*
 
-**Feature selection**
-
-**Training model**
-
-**Testing model**
+The main script performs **Feature extraction**, **Feature selection**,**Training of model**, and **Tests the models**. A performance report will be generated after running the script with the performance metrics from the algorithms by using different feature selection methods.
